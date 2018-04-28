@@ -67,7 +67,7 @@ let g:jedi#auto_vim_configuration = 0
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
-let g:neocomplete#sources#omni#input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+"let g:neocomplete#sources#omni#input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
 
 " neocomplete関連終わり---------------------------------------------------------
@@ -100,6 +100,7 @@ set tabstop=4		" タブ幅
 set expandtab		" tab to spaces
 set smarttab		" shiftwidth instead of tabstop at start of lines
 set softtabstop=4	" backspace deletes 4spaces(converted <TAB>)
+set backspace=indent,eol,start  " make the bs work like most other prgms
 
 
 """ マクロ&キー関係 """
