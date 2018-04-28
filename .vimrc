@@ -101,6 +101,10 @@ nnoremap <S-Right> <C-w>><CR>
 nnoremap <S-Up>	   <C-w>-<CR>
 nnoremap <S-Down>  <C-w>+<CR>
 
+" Tabで補完候補を選択, Shift-TabでReverse: Deoplete用
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 
 """ Misc """
 " Swapファイル要らん
