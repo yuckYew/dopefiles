@@ -78,6 +78,7 @@ set softtabstop=4	" backspace deletes 4spaces(converted <TAB>)
 
 """ マクロ&キー関係 """
 imap jj <Esc>		" ESCをjjにマッピング
+vmap <C-j> <Esc>    " v-mode ESCをCTRL+jにマッピング
 vnoremap v $h		" v2回で行末までvisual選択
 
 " jk移動を折り返されたテキストでも自然にする
@@ -104,6 +105,9 @@ nnoremap <S-Down>  <C-w>+<CR>
 " Tabで補完候補を選択, Shift-TabでReverse: Deoplete用
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Open NerdTree with CTRL+E
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 
 """ Misc """

@@ -22,3 +22,6 @@ hook_add = '''
 
 [[plugins]]
 repo = 'flazz/vim-colorschemes'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
