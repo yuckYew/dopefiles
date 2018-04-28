@@ -2,23 +2,18 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'Shougo/neocomplete.vim'
-
-[[plugins]]
-repo = 'davidhalter/jedi-vim'
-on_ft = 'python'
-
-[[plugins]]
 repo = 'Shougo/vimproc.vim'
-hook_post_update = '''
-  if dein#util#_is_windows()
-    let cmd = 'tools\\update-dll-mingw'
-  elseif dein#util#_is_cygwin()
-    let cmd = 'make -f make_cygwin.mak'
-  elseif executable('gmake')
-    let cmd = 'gmake'
-  else
-    let cmd = 'make'
-  endif
-  let g:dein#plugin.build = cmd
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+    let g:deoplete#enable_at_startup = 1
+'''
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+depends = ['deoplete.nvim']
+on_ft = ['python']
+hook_add = '''
+    let g:deoplete#sources#jdei#python_path = '/home/chasen/.pyenv/versions/anaconda3-5.0.1/bin//python'
 '''
