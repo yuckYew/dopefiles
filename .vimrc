@@ -19,13 +19,13 @@ if dein#load_state(s:dein_dir)
 
   " プラグインを収めたTOMLファイル
   " 予めTOMLファイルを用意
-  let g:rc_dir    = expand('~/')
-  let s:toml      = g:rc_dir . 'dein.toml'
-  "let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+  let g:rc_dir    = expand('~/dopefiles')
+  let s:toml      = g:rc_dir . '/dein.toml'
+  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
 
   " TOMLを読み込み、キャッシュしておく
   call dein#load_toml(s:toml,      {'lazy': 0})
-  "call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
   " 設定完了
   call dein#end()
@@ -43,36 +43,10 @@ filetype indent plugin on
 
 " dein関連終わり---------------------------------------------------------------
 
-""" neocomplete関係 """
+" omnicompletion
+set omnifunc=jedi#completions
 
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-" 3文字以上の単語に対して補完を有効にする
-let g:neocomplete#min_keyword_length = 3
-" 区切り文字まで補完する
-let g:neocomplete#enable_auto_delimiter = 1
-" 1文字目の入力から補完のポップアップを表示
-let g:neocomplete#auto_completion_start_length = 1
-
-" バックスペースで補完のポップアップを閉じる
-inoremap <expr><BS> neocomplete#smart_close_popup()."<C-h>"
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" jedi-vim関連
-autocmd FileType python setlocal omnifunc=jedi#completions
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-"let g:neocomplete#sources#omni#input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
-
-
-" neocomplete関連終わり---------------------------------------------------------
-
-colorscheme elflord
+colorscheme zenburn
 
 "文字コードをUTF-8に設定
 set fenc=utf-8
@@ -105,6 +79,7 @@ set backspace=indent,eol,start  " make the bs work like most other prgms
 
 """ マクロ&キー関係 """
 imap jj <Esc>		" ESCをjjにマッピング
+vmap <C-j> <Esc>    " v-mode ESCをCTRL+jにマッピング
 vnoremap v $h		" v2回で行末までvisual選択
 
 " jk移動を折り返されたテキストでも自然にする
@@ -127,6 +102,13 @@ nnoremap <S-Left>  <C-w><<CR>
 nnoremap <S-Right> <C-w>><CR>
 nnoremap <S-Up>	   <C-w>-<CR>
 nnoremap <S-Down>  <C-w>+<CR>
+
+" Tabで補完候補を選択, Shift-TabでReverse: Deoplete用
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Open NerdTree with CTRL+E
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 
 """ Misc """
