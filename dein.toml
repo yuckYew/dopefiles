@@ -17,3 +17,6 @@ on_ft = ['python']
 hook_add = '''
     let g:deoplete#sources#jdei#python_path = '/home/chasen/.pyenv/versions/anaconda3-5.0.1/bin//python'
 '''
+
+[[plugins]]
+repo = 'flazz/vim-colorschemes'

@@ -46,7 +46,7 @@ filetype indent plugin on
 " omnicompletion
 set omnifunc=jedi#completions
 
-colorscheme elflord
+colorscheme iceberg
 
 "文字コードをUTF-8に設定
 set fenc=utf-8
