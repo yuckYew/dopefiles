@@ -109,6 +109,8 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Open NerdTree with CTRL+E
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
+" Split horizontally with ss
+nnoremap ss :split<CR>
 
 """ Misc """
 " Swapファイル要らん
