@@ -46,7 +46,9 @@ filetype indent plugin on
 " omnicompletion
 set omnifunc=jedi#completions
 
-colorscheme zenburn
+"colorscheme badwolf
+colorscheme dracula
+set background=dark
 
 "文字コードをUTF-8に設定
 set fenc=utf-8
@@ -74,6 +76,7 @@ set tabstop=4		" タブ幅
 set expandtab		" tab to spaces
 set smarttab		" shiftwidth instead of tabstop at start of lines
 set softtabstop=4	" backspace deletes 4spaces(converted <TAB>)
+set backspace=indent,eol,start  " make the bs work like most other prgms
 
 
 """ マクロ&キー関係 """
