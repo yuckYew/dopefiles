@@ -46,7 +46,9 @@ filetype indent plugin on
 " omnicompletion
 set omnifunc=jedi#completions
 
-colorscheme zenburn
+"colorscheme badwolf
+colorscheme dracula
+set background=dark
 
 "文字コードをUTF-8に設定
 set fenc=utf-8
