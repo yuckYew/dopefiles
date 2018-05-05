@@ -81,6 +81,7 @@ set backspace=indent,eol,start  " make the bs work like most other prgms
 
 """ マクロ&キー関係 """
 imap jj <Esc>		" ESCをjjにマッピング
+imap <C-j> <Esc>    " ESCをjjにマッピング
 vmap <C-j> <Esc>    " v-mode ESCをCTRL+jにマッピング
 vnoremap v $h		" v2回で行末までvisual選択
 
@@ -114,6 +115,7 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 " Split horizontally with ss
 nnoremap ss :split<CR>
+nnoremap sv :vsplit<CR>
 
 """ Misc """
 " Swapファイル要らん
