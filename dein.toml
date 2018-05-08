@@ -25,3 +25,10 @@ repo = 'flazz/vim-colorschemes'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'alvan/vim-closetag'
+on_ft = ['html']
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
