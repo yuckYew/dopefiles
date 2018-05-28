@@ -47,7 +47,7 @@ filetype indent plugin on
 set omnifunc=jedi#completions
 
 "colorscheme badwolf
-colorscheme dracula
+"colorscheme solarized
 set background=dark
 
 "文字コードをUTF-8に設定
@@ -125,3 +125,6 @@ inoremap <C-l> <C-o>A
 set nowritebackup
 set nobackup
 set noswapfile
+
+" For guake terminal
+set guicursor=
