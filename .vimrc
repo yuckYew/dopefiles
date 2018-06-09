@@ -122,3 +122,6 @@ nnoremap sv :vsplit<CR>
 set nowritebackup
 set nobackup
 set noswapfile
+
+" HTML files have 2 space for <TAB>
+autocmd BufRead,BufNewFile *.htm,*.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
