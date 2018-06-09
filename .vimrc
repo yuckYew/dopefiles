@@ -47,7 +47,7 @@ filetype indent plugin on
 set omnifunc=jedi#completions
 
 "colorscheme badwolf
-colorscheme dracula
+"colorscheme solarized
 set background=dark
 
 "文字コードをUTF-8に設定
@@ -117,6 +117,9 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap ss :split<CR>
 nnoremap sv :vsplit<CR>
 
+" Going to the end of line while in insert mode using Ctrl+l
+inoremap <C-l> <C-o>A
+
 """ Misc """
 " Swapファイル要らん
 set nowritebackup
@@ -125,3 +128,5 @@ set noswapfile
 
 " HTML files have 2 space for <TAB>
 autocmd BufRead,BufNewFile *.htm,*.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+" For guake terminal
+set guicursor=
