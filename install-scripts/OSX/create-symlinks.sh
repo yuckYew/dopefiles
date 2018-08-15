@@ -7,3 +7,4 @@ mkdir ~/.config/nvim
 ln -sf ~/dopefiles/.vimrc ~/.config/nvim/init.vim
 pip install neovim
 ln -sf ~/dopefiles/config.fish ~/.config/fish/config.fish
+ln -sf ~/dopefiles/.tmux.conf ~/.tmux.conf

@@ -32,3 +32,6 @@ on_ft = ['html']
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
+
+[[plugins]]
+repo = 'tell-k/vim-autopep8'
