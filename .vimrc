@@ -118,7 +118,7 @@ nnoremap ss :split<CR>
 nnoremap sv :vsplit<CR>
 
 " Going to the end of line while in insert mode using Ctrl+l
-inoremap <C-l> <C-o>A
+inoremap <C-w> <C-o>A
 
 """ Misc """
 " Swapファイル要らん
