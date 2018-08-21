@@ -81,7 +81,6 @@ set backspace=indent,eol,start  " make the bs work like most other prgms
 
 """ マクロ&キー関係 """
 imap jj <Esc>		" ESCをjjにマッピング
-imap <C-j> <Esc>    " ESCをjjにマッピング
 vmap <C-j> <Esc>    " v-mode ESCをCTRL+jにマッピング
 vnoremap v $h		" v2回で行末までvisual選択
 
@@ -93,12 +92,6 @@ nnoremap <Up>	gk
 
 " ESC2回でハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
-
-" Ctrl + hjklでウィンドウ間を移動
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
 " Shft + arrowでウィンドウサイズを変更
 nnoremap <S-Left>  <C-w><<CR>
@@ -122,6 +115,7 @@ inoremap <C-h> <C-o><Left>
 inoremap <C-j> <C-o><Down>
 inoremap <C-k> <C-o><Up>
 inoremap <C-l> <C-o><Right>
+inoremap <C-w> <C-o>A
 
 """ Misc """
 " Swapファイル要らん
