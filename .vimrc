@@ -117,8 +117,11 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap ss :split<CR>
 nnoremap sv :vsplit<CR>
 
-" Going to the end of line while in insert mode using Ctrl+l
-inoremap <C-l> <C-o>A
+" Moving in insertmode with CTRL+<arrow keys>
+inoremap <C-h> <C-o><Left>
+inoremap <C-j> <C-o><Down>
+inoremap <C-k> <C-o><Up>
+inoremap <C-l> <C-o><Right>
 
 """ Misc """
 " Swapファイル要らん
