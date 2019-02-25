@@ -14,3 +14,4 @@ set -x PATH $HOME/.rbenv/bin $PATH
 
 ## for nodebrew
 set -x PATH $HOME/.nodebrew/current/bin $PATH
+alias rp="realpath"
