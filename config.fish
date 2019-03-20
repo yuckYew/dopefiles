@@ -14,4 +14,7 @@ set -x PATH $HOME/.rbenv/bin $PATH
 
 ## for nodebrew
 set -x PATH $HOME/.nodebrew/current/bin $PATH
+
+## Alias
 alias rp="realpath"
+alias autopep="autopep8 --in-place --aggressive --aggressive"
