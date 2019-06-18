@@ -77,13 +77,26 @@ set hlsearch		" 検索文字列をハイライト
 
 """ 編集関係 """
 set showmatch		" 対応する括弧をハイライト
-set shiftwidth=4	" インデント幅
-set tabstop=4		" タブ幅
 set expandtab		" tab to spaces
 set smarttab		" shiftwidth instead of tabstop at start of lines
-set softtabstop=4	" backspace deletes 4spaces(converted <TAB>)
 set backspace=indent,eol,start  " make the bs work like most other prgms
 
+augroup indentByfileType
+    "shiftwidth: indent length
+    "tabstop: tab length
+    "softtabstop: backspace deletes 4spaces(converted <TAB>)
+    autocmd!
+    autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.tex setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.html setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.js setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
+
+""" skeleton読むぜ """
+augroup templates
+    autocmd BufNewFile *.html 0r ./templates/skeleton.html
+augroup END
 
 """ マクロ&キー関係 """
 imap jj <Esc>		" ESCをjjにマッピング
