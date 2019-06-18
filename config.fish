@@ -5,7 +5,6 @@ set -g theme_display_virtualenv yes
 set -x TERM xterm-256color
 
 ## For GOPATH
-<<<<<<< HEAD
 set -x GOPATH $HOME/Code/go/ $GOPATH
 
 ## for goenv
