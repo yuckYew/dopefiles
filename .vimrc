@@ -43,12 +43,18 @@ filetype indent plugin on
 
 " dein関連終わり---------------------------------------------------------------
 
+" TrueColorに対応
+set termguicolors
+
+" [Mac] クリップボードの共有
+set clipboard=unnamed
+
 " omnicompletion
 set omnifunc=jedi#completions
 
-"colorscheme badwolf
-"colorscheme solarized
-set background=dark
+colorscheme badwolf
+colorscheme solarized
+"set background=dark
 
 "文字コードをUTF-8に設定
 set fenc=utf-8
@@ -99,9 +105,17 @@ nnoremap <S-Right> <C-w>><CR>
 nnoremap <S-Up>	   <C-w>-<CR>
 nnoremap <S-Down>  <C-w>+<CR>
 
-" Tabで補完候補を選択, Shift-TabでReverse: Deoplete用
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" [Deoplete] Change window color
+highlight Pmenu ctermbg=8 guibg=#606060
+highlight PmenuSel ctermbg=1 guifg=#dddd00 guibg=#1f82cd
+highlight PmenuSbar ctermbg=0 guibg=#f9f9f9
+
+" [Deoplete] Reverse the cycling direction of the completion candidates
+let g:SuperTabContextDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+" For jedi-vim, disable docstring popup during completion
+autocmd FileType python setlocal completeopt-=preview
 
 " Open NerdTree with CTRL+E
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
@@ -124,6 +138,27 @@ set nobackup
 set noswapfile
 
 " HTML files have 2 space for <TAB>
-autocmd BufRead,BufNewFile *.htm,*.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd BufRead,BufNewFile *.htm,*.html,*.c,*.cpp setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
 " For guake terminal
 set guicursor=
+
+" Change leader to SPACE
+let mapleader=" "
+
+
+" [ALE] Settings for python linter
+" flake8をLinterとして登録
+let g:ale_linters = {
+    \ 'python': ['flake8'],
+    \ }
+
+" 各ツールをFixerとして登録
+let g:ale_fixers = {
+    \ 'python': ['autopep8', 'black', 'isort'],
+    \ }
+
+" ついでにFixを実行するマッピングしとく
+nmap <silent> <Leader>x <Plug>(ale_fix)
+" ファイル保存時に自動的にFixするオプションもあるのでお好みで
+let g:ale_fix_on_save = 1
