@@ -52,7 +52,6 @@ set clipboard=unnamed
 " omnicompletion
 set omnifunc=jedi#completions
 
-colorscheme badwolf
 colorscheme solarized
 "set background=dark
 
